@@ -2,7 +2,7 @@
 
 ![Python](https://img.shields.io/badge/Python-3.10%2B-3776AB?style=for-the-badge&logo=python&logoColor=white)
 ![Django](https://img.shields.io/badge/Django-5.2%2B-092E20?style=for-the-badge&logo=django&logoColor=white)
-![Google Gemini](https://img.shields.io/badge/Google%20Gemini-AI-4285F4?style=for-the-badge&logo=google&logoColor=white)
+![Google Gemini](https://img.shields.io/badge/Google%20Gemini-AI-4285F4?style=for-the-badge)
 ![GitHub API](https://img.shields.io/badge/GitHub-REST%20API-181717?style=for-the-badge&logo=github&logoColor=white)
 ![JavaScript](https://img.shields.io/badge/JavaScript-ES6%2B-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
 ![SQLite](https://img.shields.io/badge/SQLite-Database-003B57?style=for-the-badge&logo=sqlite&logoColor=white)
@@ -16,14 +16,14 @@ resulting context to Gemini for documentation generation.
 
 ## 🧰 Technology Stack
 
-| Technology | Role | Logo |
+| Technology | Role | Official link and badge |
 | --- | --- | --- |
-| [Python](https://www.python.org/) | Application language | [![Python](https://skillicons.dev/icons?i=python)](https://www.python.org/) |
-| [Django](https://www.djangoproject.com/) | Web framework and API routing | [![Django](https://skillicons.dev/icons?i=django)](https://www.djangoproject.com/) |
-| [Google Gemini](https://ai.google.dev/) | README generation | [![Google](https://skillicons.dev/icons?i=google)](https://ai.google.dev/) |
-| [GitHub REST API](https://docs.github.com/en/rest) | Repository metadata and file access | [![GitHub](https://skillicons.dev/icons?i=github)](https://docs.github.com/en/rest) |
-| JavaScript | Browser interactions and wizard state | [![JavaScript](https://skillicons.dev/icons?i=javascript)](https://developer.mozilla.org/en-US/docs/Web/JavaScript) |
-| SQLite | Local development database | [![SQLite](https://skillicons.dev/icons?i=sqlite)](https://www.sqlite.org/) |
+| [Python](https://www.python.org/) | Application language | [![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white)](https://www.python.org/) |
+| [Django](https://www.djangoproject.com/) | Web framework and API routing | [![Django](https://img.shields.io/badge/Django-092E20?style=flat-square&logo=django&logoColor=white)](https://www.djangoproject.com/) |
+| [Google Gemini](https://ai.google.dev/) | README generation | [![Gemini](https://img.shields.io/badge/Gemini%20API-4285F4?style=flat-square)](https://ai.google.dev/) |
+| [GitHub REST API](https://docs.github.com/en/rest) | Repository metadata and file access | [![GitHub](https://img.shields.io/badge/GitHub%20API-181717?style=flat-square&logo=github&logoColor=white)](https://docs.github.com/en/rest) |
+| [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript) | Browser interactions and wizard state | [![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black)](https://developer.mozilla.org/en-US/docs/Web/JavaScript) |
+| [SQLite](https://www.sqlite.org/) | Local development database | [![SQLite](https://img.shields.io/badge/SQLite-003B57?style=flat-square&logo=sqlite&logoColor=white)](https://www.sqlite.org/) |
 
 ## 📸 Screenshots
 
@@ -50,20 +50,39 @@ maintain:
 > ℹ️ The image paths are prepared for repository screenshots. Capture the pages
 > locally after setup and add the PNG files to make this gallery render.
 
-## 🏗️ Pipeline Architecture
+## 🏗️ System Architecture
 
-```mermaid
-flowchart LR
-   A[👤 User pastes GitHub URL] --> B[🖥️ Django wizard UI]
-   B --> C[🔎 GitHub analysis endpoint]
-   C --> D[🐙 GitHub REST API]
-   D --> E[📦 Repository metadata and file tree]
-   E --> F[🧹 Select important files]
-   F --> G[📝 Build codebase context]
-   G --> H[✨ Gemini generation service]
-   H --> I[🤖 Gemini API]
-   I --> J[📄 Generated Markdown]
-   J --> K[👀 Preview / Copy / Download]
+```text
++------------------+       +------------------------+
+| 👤 Browser User   |       | 🖥️ Django Web App       |
+| GitHub URL        | ----> | Wizard + JSON endpoints |
++------------------+       +-----------+------------+
+                           |
+              +-------------------+-------------------+
+              |                                       |
+              v                                       v
+       +-------------------+                    +-------------------+
+       | 🐙 GitHub REST API |                    | 💾 SQLite          |
+       | metadata + files  |                    | local Django data  |
+       +---------+---------+                    +-------------------+
+              |
+              v
+       +-------------------------+
+       | 🧹 Repository Analyzer  |
+       | select files + context  |
+       +------------+------------+
+                |
+                v
+       +-------------------------+       +-------------------+
+       | ✨ AI Service            | ----> | 🤖 Gemini API      |
+       | prompt + preferences    |       | README generation |
+       +------------+------------+       +-------------------+
+                |
+                v
+       +-------------------------+
+       | 📄 Markdown Result      |
+       | preview / copy / save   |
+       +-------------------------+
 ```
 
 ### 🔁 Request Flow
@@ -87,7 +106,7 @@ flowchart LR
 - 🛡️ Explicit handling for invalid GitHub tokens, GitHub rate limits, and temporary
   Gemini availability errors
 
-## Requirements
+## 📋 Requirements
 
 - Python 3.10 or newer
 - A GitHub token with read access to the repositories you want to analyze
@@ -96,7 +115,7 @@ flowchart LR
 The application is intended for local development. Do not commit `.env`, API
 keys, GitHub tokens, the local SQLite database, or the virtual environment.
 
-## Installation
+## 📦 Installation
 
 Clone the repository and enter the project directory:
 
@@ -125,7 +144,7 @@ python -m pip install --upgrade pip
 pip install -r requirements.txt
 ```
 
-## Environment Setup
+## 🔐 Environment Setup
 
 Create your local environment file from the example:
 
@@ -142,13 +161,13 @@ GEMINI_MODEL="gemini-3.6-flash"
 GEMINI_FALLBACK_MODEL="gemini-3.5-flash-lite"
 ```
 
-### GitHub token permissions
+### 🔑 GitHub Token Permissions
 
 For public repositories, a fine-grained token should have repository metadata and
 contents read access. If you analyze private repositories, grant access only to
 the specific repositories required by the application.
 
-### Gemini model configuration
+### 🤖 Gemini Model Configuration
 
 `GEMINI_MODEL` is the primary model. `GEMINI_FALLBACK_MODEL` is tried when the
 primary model temporarily returns a `503` availability error. Both models must
@@ -157,7 +176,7 @@ be enabled for the configured Gemini key.
 Never paste credentials into source files, commits, screenshots, issues, or
 chat. Revoke and replace any credential that has been exposed.
 
-## Database Setup
+## 💾 Database Setup
 
 The current application does not define custom database models, but Django's
 standard applications require their migrations for a normal local setup:
@@ -166,7 +185,7 @@ standard applications require their migrations for a normal local setup:
 python manage.py migrate
 ```
 
-## Running Locally
+## ▶️ Running Locally
 
 Run Django's development server:
 
@@ -176,7 +195,7 @@ python manage.py runserver
 
 Open <http://127.0.0.1:8000/> in your browser.
 
-## Usage
+## 🧭 Usage
 
 1. Paste a GitHub repository URL on the home page.
 2. Continue through the theme, technology, section, and screenshot steps.
@@ -188,7 +207,7 @@ The browser stores the wizard selections in `localStorage` until they are
 replaced or cleared. The server uses the selected repository URL to fetch
 metadata and source context before calling Gemini.
 
-## API Endpoints
+## 🔌 API Endpoints
 
 | Method | Endpoint | Purpose |
 | --- | --- | --- |
@@ -206,7 +225,7 @@ metadata and source context before calling Gemini.
 The generation endpoint accepts JSON with `url`, `theme`, `technologies`,
 `sections`, `screenshots`, and `custom_notes` fields.
 
-## Validation
+## 🧪 Validation
 
 Run Django's system checks:
 
@@ -220,7 +239,7 @@ Check JavaScript syntax where Node.js is available:
 node --check generator/static/generator/js/result.js
 ```
 
-## Project Structure
+## 🗂️ Project Structure
 
 ```text
 config/                         Django project configuration
@@ -236,26 +255,26 @@ requirements.txt                Python dependencies
 .env.example                    Environment variable template
 ```
 
-## Troubleshooting
+## 🛠️ Troubleshooting
 
-### GitHub token is invalid or expired
+### 🔑 GitHub Token Is Invalid or Expired
 
 Create a new token, update `.env`, stop the existing Django process, and start
 it again. An already-running process does not automatically receive changes to
 its environment.
 
-### GitHub API rate limit exceeded
+### ⏱️ GitHub API Rate Limit Exceeded
 
 Use an authenticated GitHub token and restart Django after updating `.env`. The
 application returns the rate-limit reset timestamp when GitHub provides one.
 
-### Gemini is temporarily unavailable
+### 🤖 Gemini Is Temporarily Unavailable
 
 The service retries temporary `503` responses and then tries the configured
 fallback model. Retry after a short wait, or configure another enabled model in
 `.env`.
 
-## Security Notes
+## 🛡️ Security Notes
 
 - Keep `.env` local and out of version control.
 - Revoke exposed GitHub and Gemini credentials immediately.
@@ -263,7 +282,7 @@ fallback model. Retry after a short wait, or configure another enabled model in
 - Set `DEBUG = False`, configure `ALLOWED_HOSTS`, and use a production WSGI or
   ASGI server before deploying publicly.
 
-## License
+## 📄 License
 
 No license has been specified yet. Add a license file before distributing the
 project.
