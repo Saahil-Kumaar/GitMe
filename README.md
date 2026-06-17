@@ -1,19 +1,90 @@
-# RepoReadme AI
+# RepoReadme AI 🤖✨
+
+![Python](https://img.shields.io/badge/Python-3.10%2B-3776AB?style=for-the-badge&logo=python&logoColor=white)
+![Django](https://img.shields.io/badge/Django-5.2%2B-092E20?style=for-the-badge&logo=django&logoColor=white)
+![Google Gemini](https://img.shields.io/badge/Google%20Gemini-AI-4285F4?style=for-the-badge&logo=google&logoColor=white)
+![GitHub API](https://img.shields.io/badge/GitHub-REST%20API-181717?style=for-the-badge&logo=github&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-ES6%2B-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
+![SQLite](https://img.shields.io/badge/SQLite-Database-003B57?style=for-the-badge&logo=sqlite&logoColor=white)
+
+> 🚀 Turn any GitHub repository into a README people actually want to read.
 
 RepoReadme AI turns a public GitHub repository into a polished, project-specific
 `README.md`. It analyzes repository metadata and selected source/configuration
 files, asks for the README's style and content preferences, and sends the
 resulting context to Gemini for documentation generation.
 
-## Features
+## 🧰 Technology Stack
 
-- GitHub repository URL validation and metadata collection
-- Repository tree inspection with filtering for useful project files
-- Wizard flow for theme, technologies, sections, screenshots, and custom notes
-- Gemini-powered README generation
-- Markdown preview and raw Markdown view
-- Copy-to-clipboard and `README.md` download actions
-- Explicit handling for invalid GitHub tokens, GitHub rate limits, and temporary
+| Technology | Role | Logo |
+| --- | --- | --- |
+| [Python](https://www.python.org/) | Application language | [![Python](https://skillicons.dev/icons?i=python)](https://www.python.org/) |
+| [Django](https://www.djangoproject.com/) | Web framework and API routing | [![Django](https://skillicons.dev/icons?i=django)](https://www.djangoproject.com/) |
+| [Google Gemini](https://ai.google.dev/) | README generation | [![Google](https://skillicons.dev/icons?i=google)](https://ai.google.dev/) |
+| [GitHub REST API](https://docs.github.com/en/rest) | Repository metadata and file access | [![GitHub](https://skillicons.dev/icons?i=github)](https://docs.github.com/en/rest) |
+| JavaScript | Browser interactions and wizard state | [![JavaScript](https://skillicons.dev/icons?i=javascript)](https://developer.mozilla.org/en-US/docs/Web/JavaScript) |
+| SQLite | Local development database | [![SQLite](https://skillicons.dev/icons?i=sqlite)](https://www.sqlite.org/) |
+
+## 📸 Screenshots
+
+Screenshots of the main workflow belong here. Add captured images to
+`docs/screenshots/` and keep the filenames below so the gallery stays easy to
+maintain:
+
+### 🏠 Home and Repository Input
+
+<!-- Add: docs/screenshots/home.png -->
+![Home page](docs/screenshots/home.png)
+
+### 🎨 README Customization Wizard
+
+<!-- Add: docs/screenshots/theme.png and docs/screenshots/review.png -->
+![Theme selection page](docs/screenshots/theme.png)
+![Review page](docs/screenshots/review.png)
+
+### ✅ Generated README Result
+
+<!-- Add: docs/screenshots/result.png -->
+![Generated README result](docs/screenshots/result.png)
+
+> ℹ️ The image paths are prepared for repository screenshots. Capture the pages
+> locally after setup and add the PNG files to make this gallery render.
+
+## 🏗️ Pipeline Architecture
+
+```mermaid
+flowchart LR
+   A[👤 User pastes GitHub URL] --> B[🖥️ Django wizard UI]
+   B --> C[🔎 GitHub analysis endpoint]
+   C --> D[🐙 GitHub REST API]
+   D --> E[📦 Repository metadata and file tree]
+   E --> F[🧹 Select important files]
+   F --> G[📝 Build codebase context]
+   G --> H[✨ Gemini generation service]
+   H --> I[🤖 Gemini API]
+   I --> J[📄 Generated Markdown]
+   J --> K[👀 Preview / Copy / Download]
+```
+
+### 🔁 Request Flow
+
+1. The browser stores wizard choices in `localStorage`.
+2. Django validates the repository URL and requests metadata from GitHub.
+3. The repository analyzer filters the tree and fetches important project files.
+4. The AI service combines metadata, source context, and preferences into a
+  structured prompt.
+5. Gemini returns raw Markdown, which the results page renders and exposes for
+  copying or downloading.
+
+## ✨ Features
+
+- 🔗 GitHub repository URL validation and metadata collection
+- 🌲 Repository tree inspection with filtering for useful project files
+- 🎨 Wizard flow for theme, technologies, sections, screenshots, and custom notes
+- ✨ Gemini-powered README generation
+- 👀 Markdown preview and raw Markdown view
+- 📋 Copy-to-clipboard and `README.md` download actions
+- 🛡️ Explicit handling for invalid GitHub tokens, GitHub rate limits, and temporary
   Gemini availability errors
 
 ## Requirements
