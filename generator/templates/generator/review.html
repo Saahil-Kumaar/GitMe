@@ -1,0 +1,182 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Review | RepoReadme AI</title>
+
+    <link rel="stylesheet"
+          href="{% static 'generator/css/style.css' %}">
+</head>
+
+<body class="theme-page-new">
+
+    <nav class="landing-nav">
+
+        <div class="brand">
+            <span class="brand-icon">✦</span>
+            <span>reporeadme</span>
+        </div>
+
+        <div class="theme-step">
+            06 / 06
+        </div>
+
+    </nav>
+
+
+    <main class="review-container">
+
+        <div class="theme-heading">
+
+            <div class="eyebrow">
+                <span>06</span>
+                REVIEW
+            </div>
+
+            <h1>
+                Almost
+                <span>there.</span>
+            </h1>
+
+            <p>
+                Review your choices before generating
+                your project README.
+            </p>
+
+        </div>
+
+
+        <div class="review-grid">
+
+            <!-- Repository -->
+
+            <div class="review-card">
+
+                <div class="review-number">
+                    01
+                </div>
+
+                <div>
+                    <h3>Repository</h3>
+
+                    <p id="review-repository">
+                        Loading...
+                    </p>
+                </div>
+
+            </div>
+
+
+            <!-- Theme -->
+
+            <div class="review-card">
+
+                <div class="review-number">
+                    02
+                </div>
+
+                <div>
+                    <h3>Theme</h3>
+
+                    <p id="review-theme">
+                        Loading...
+                    </p>
+                </div>
+
+            </div>
+
+
+            <!-- Technologies -->
+
+            <div class="review-card">
+
+                <div class="review-number">
+                    03
+                </div>
+
+                <div>
+                    <h3>Technologies</h3>
+
+                    <div
+                        id="review-technologies"
+                        class="review-tags">
+                    </div>
+                </div>
+
+            </div>
+
+
+            <!-- Sections -->
+
+            <div class="review-card">
+
+                <div class="review-number">
+                    04
+                </div>
+
+                <div>
+                    <h3>README Sections</h3>
+
+                    <div
+                        id="review-sections"
+                        class="review-tags">
+                    </div>
+                </div>
+
+            </div>
+
+
+            <!-- Screenshots -->
+
+            <div class="review-card">
+
+                <div class="review-number">
+                    05
+                </div>
+
+                <div>
+                    <h3>Screenshots</h3>
+
+                    <p id="review-screenshots">
+                        0 screenshots
+                    </p>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="generate-area">
+
+            <button
+                class="back-button"
+                onclick="history.back()">
+                ← Back
+            </button>
+
+            <button
+                id="generate-button"
+                class="generate-button">
+
+                Generate README
+
+                <span>✦</span>
+
+            </button>
+
+        </div>
+
+    </main>
+
+
+    <script src="{% static 'generator/js/review.js' %}"></script>
+
+</body>
+
+</html>

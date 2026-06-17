@@ -1,0 +1,100 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Repository | RepoReadme AI</title>
+
+    <link rel="stylesheet"
+          href="{% static 'generator/css/style.css' %}">
+</head>
+
+<body class="theme-page-new">
+
+    <nav class="landing-nav">
+
+        <div class="brand">
+            <span class="brand-icon">✦</span>
+            <span>reporeadme</span>
+        </div>
+
+        <div class="theme-step">
+            01 / 06
+        </div>
+
+    </nav>
+
+
+    <main class="theme-container">
+
+        <div class="theme-heading">
+
+            <div class="eyebrow">
+                <span>01</span>
+                YOUR REPOSITORY
+            </div>
+
+            <h1>
+                Let's start with
+                <span>your project.</span>
+            </h1>
+
+            <p>
+                We'll use your GitHub repository to understand
+                your project and create the README.
+            </p>
+
+        </div>
+
+
+        <div class="repo-card">
+
+            <div class="repo-icon">
+                ◉
+            </div>
+
+            <div>
+
+                <div class="repo-label">
+                    GitHub Repository
+                </div>
+
+                <div class="repo-url">
+                    {{ repo_url }}
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="theme-bottom">
+
+            <button
+                class="back-button"
+                onclick="history.back()">
+                ← Back
+            </button>
+
+            <a
+                href="/theme/"
+                class="continue-button">
+
+                Continue
+
+                <span>→</span>
+
+            </a>
+
+        </div>
+
+    </main>
+    <script src="{% static 'generator/js/repository.js' %}"></script>
+
+</body>
+
+</html>

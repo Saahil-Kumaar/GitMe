@@ -1,0 +1,203 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>RepoReadme AI</title>
+
+    <link rel="stylesheet"
+          href="{% static 'generator/css/style.css' %}">
+</head>
+
+<body class="landing-page">
+
+    <!-- NAVBAR -->
+    <nav class="landing-nav">
+
+        <div class="brand">
+            <span class="brand-icon">✦</span>
+            <span>reporeadme</span>
+        </div>
+
+        <div class="nav-right">
+            <span class="free-badge">
+                <span></span>
+                FREE TO USE
+            </span>
+
+            <a href="https://github.com" target="_blank">
+                GitHub ↗
+            </a>
+        </div>
+
+    </nav>
+
+
+    <!-- HERO -->
+    <main class="hero-section">
+
+        <div class="hero-content">
+
+            <div class="eyebrow">
+                <span>01</span>
+                README GENERATOR FOR PROJECTS
+            </div>
+
+            <h1>
+                Make your project
+                <span>easy to love.</span>
+            </h1>
+
+            <p class="hero-description">
+                Turn a GitHub repository into a README that explains
+                what matters, looks good, and gets people building.
+            </p>
+
+
+            <!-- INPUT -->
+            <div class="repo-form">
+
+                <label>
+                    Paste your repository link
+                </label>
+
+                <div class="repo-input-wrapper">
+
+                    <span class="input-icon">◉</span>
+
+                    <input
+                        type="text"
+                        id="repo-url"
+                        placeholder="https://github.com/you/project"
+                    >
+
+                    <button id="analyze-btn">
+                        Start
+                        <span>→</span>
+                    </button>
+
+                </div>
+
+                <p class="input-help">
+                    We'll ask a few simple questions next.
+                    No Markdown knowledge needed.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- README PREVIEW -->
+        <div class="hero-preview">
+
+            <div class="preview-label">
+                YOUR README,
+                <br>
+                YOUR WAY
+                <span>↘</span>
+            </div>
+
+            <div class="readme-window">
+
+                <div class="window-top">
+
+                    <div class="window-dots">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+
+                    <span class="window-title">
+                        preview.md
+                    </span>
+
+                </div>
+
+
+                <div class="readme-content">
+
+                    <div class="readme-edition">
+                        WARM EDITION
+                    </div>
+
+                    <h2>
+                        your-project
+                    </h2>
+
+                    <p>
+                        A little context goes a long way.
+                    </p>
+
+                    <div class="preview-line"></div>
+
+                    <p>
+                        A clean, thoughtful starting point
+                        for your next open source project.
+                    </p>
+
+                    <code>
+                        npm run dev
+                    </code>
+
+                    <div class="tags">
+                        <span>JavaScript</span>
+                        <span>Open source</span>
+                        <span>MIT</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- THEME INDICATOR -->
+
+            <div class="theme-selector">
+
+                <span>PICK A MOOD</span>
+
+                <button class="active">
+                    Warm
+                </button>
+
+                <button>
+                    Mono
+                </button>
+
+                <button>
+                    Fresh
+                </button>
+
+            </div>
+
+        </div>
+
+    </main>
+
+
+    <!-- FOOTER -->
+    <footer class="landing-footer">
+
+        <span>
+            BUILT FOR PEOPLE WHO BUILD THINGS
+        </span>
+
+        <span>
+            GITHUB PROJECTS ONLY
+            <b>•</b>
+            2026
+        </span>
+
+    </footer>
+
+
+    <script src="{% static 'generator/js/app.js' %}"></script>
+
+</body>
+
+</html>

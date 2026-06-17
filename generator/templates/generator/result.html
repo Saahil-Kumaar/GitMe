@@ -1,0 +1,65 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generated README - README AI</title>
+    
+        <link rel="stylesheet"
+                href="{% static 'generator/css/style.css' %}?v=3">
+    
+    <!-- Marked.js for rendering the Markdown into HTML -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+</head>
+<body class="theme-page-new">
+    <nav class="landing-nav">
+        <div class="brand">
+            <span class="brand-icon">✦</span>
+            <span>reporeadme</span>
+        </div>
+
+        <div class="theme-step">README READY</div>
+    </nav>
+
+    <main class="result-container">
+        <div class="theme-heading">
+            <div class="eyebrow">
+                <span>07</span>
+                GENERATED README
+            </div>
+
+            <h1>Your README is <span>ready.</span></h1>
+
+            <p>Review your generated markdown, copy it to your clipboard, or download the file.</p>
+        </div>
+
+        <div class="result-toolbar">
+            <div class="tab-controls">
+                <button id="btn-tab-preview" class="btn-tab active">Preview</button>
+                <button id="btn-tab-raw" class="btn-tab">Raw Markdown</button>
+            </div>
+
+            <div class="action-controls">
+                <button id="btn-copy" class="secondary-button">Copy to Clipboard</button>
+                <button id="btn-download" class="continue-button">Download README.md</button>
+            </div>
+        </div>
+
+        <div id="loading-spinner" class="status-box">
+            <p>Analyzing repository context and generating your README...</p>
+            <p>This usually takes 30-45 seconds.</p>
+        </div>
+
+        <div id="view-preview" class="readme-preview-box" style="display: none;"></div>
+
+        <textarea id="view-raw" class="readme-raw-box" readonly style="display: none;"></textarea>
+
+        <div class="theme-bottom">
+            <a href="/" class="back-button">Generate Another</a>
+        </div>
+    </main>
+
+    <script src="{% static 'generator/js/result.js' %}?v=3"></script>
+</body>
+</html>

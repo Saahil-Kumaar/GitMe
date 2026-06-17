@@ -1,0 +1,115 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Screenshots | RepoReadme AI</title>
+
+    <link rel="stylesheet"
+          href="{% static 'generator/css/style.css' %}">
+</head>
+
+<body class="theme-page-new">
+
+    <nav class="landing-nav">
+
+        <div class="brand">
+            <span class="brand-icon">✦</span>
+            <span>reporeadme</span>
+        </div>
+
+        <div class="theme-step">
+            05 / 06
+        </div>
+
+    </nav>
+
+
+    <main class="theme-container">
+
+        <div class="theme-heading">
+
+            <div class="eyebrow">
+                <span>05</span>
+                SCREENSHOTS
+            </div>
+
+            <h1>
+                Show people
+                <span>your project.</span>
+            </h1>
+
+            <p>
+                Add screenshots of your application.
+                We'll place them beautifully inside your README.
+            </p>
+
+        </div>
+
+
+        <div class="screenshots-box">
+
+            <div class="upload-icon">
+                ↑
+            </div>
+
+            <h3>Upload screenshots</h3>
+
+            <p>
+                PNG, JPG or WEBP
+            </p>
+
+            <input
+                type="file"
+                id="screenshot-input"
+                multiple
+                accept="image/png,image/jpeg,image/webp"
+            >
+
+            <label
+                for="screenshot-input"
+                class="upload-button">
+                Choose Images
+            </label>
+
+        </div>
+
+
+        <div
+            id="screenshot-preview"
+            class="screenshot-preview">
+        </div>
+
+
+        <div class="theme-bottom">
+
+            <button
+                class="back-button"
+                onclick="history.back()">
+                ← Back
+            </button>
+
+            <button
+                id="screenshots-continue"
+                class="continue-button">
+
+                Continue
+
+                <span>→</span>
+
+            </button>
+
+        </div>
+
+    </main>
+
+
+    <script src="{% static 'generator/js/screenshots.js' %}"></script>
+
+</body>
+
+</html>
