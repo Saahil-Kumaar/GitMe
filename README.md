@@ -47,8 +47,6 @@ maintain:
 <!-- Add: docs/screenshots/result.png -->
 ![Generated README result](docs/screenshots/result.png)
 
-> ℹ️ The image paths are prepared for repository screenshots. Capture the pages
-> locally after setup and add the PNG files to make this gallery render.
 
 ## 🏗️ System Architecture
 
