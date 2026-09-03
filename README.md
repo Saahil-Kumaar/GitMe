@@ -53,36 +53,36 @@ maintain:
 ## 🏗️ System Architecture
 
 ```text
-+------------------+       +------------------------+
-| 👤 Browser User   |       | 🖥️ Django Web App       |
++------------------+        +--------------------------+
+| 👤 Browser User   |       | 🖥️ Django Web App        |
 | GitHub URL        | ----> | Wizard + JSON endpoints |
-+------------------+       +-----------+------------+
-                           |
-              +-------------------+-------------------+
-              |                                       |
-              v                                       v
-       +-------------------+                    +-------------------+
-       | 🐙 GitHub REST API |                    | 💾 SQLite          |
-       | metadata + files  |                    | local Django data  |
-       +---------+---------+                    +-------------------+
-              |
-              v
-       +-------------------------+
-       | 🧹 Repository Analyzer  |
-       | select files + context  |
-       +------------+------------+
-                |
-                v
-       +-------------------------+       +-------------------+
-       | ✨ AI Service            | ----> | 🤖 Gemini API      |
-       | prompt + preferences    |       | README generation |
-       +------------+------------+       +-------------------+
-                |
-                v
-       +-------------------------+
-       | 📄 Markdown Result      |
-       | preview / copy / save   |
-       +-------------------------+
++------------------+        +-----------+--------------+
+                                        |
+                          +-------------+-------------------------+
+                          |                                       |
+                          v                                       v
+                   +-------------------+                    +-------------------+
+                   | 🐙 GitHub REST API |                    | 💾 SQLite          |
+                   | metadata + files  |                    | local Django data  |
+                   +---------+---------+                    +-------------------+
+                          |
+                          v
+                   +-------------------------+
+                   | 🧹 Repository Analyzer  |
+                   | select files + context  |
+                   +------------+------------+
+                            |
+                            v
+                   +-------------------------+       +-------------------+
+                   | ✨ AI Service            | ----> | 🤖 Gemini API      |
+                   | prompt + preferences    |       | README generation |
+                   +------------+------------+       +-------------------+
+                            |
+                            v
+                   +-------------------------+
+                   | 📄 Markdown Result      |
+                   | preview / copy / save   |
+                   +-------------------------+
 ```
 
 ### 🔁 Request Flow
